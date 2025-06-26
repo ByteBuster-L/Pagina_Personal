@@ -260,3 +260,61 @@ function mostrarSeccion(id){
         });
     }
 }
+
+// Animación para la caja general de la demo
+gsap.from(".paginaEjemplo", {
+    opacity: 0,
+    y: 60,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: ".paginaEjemplo",
+        start: "top 85%",
+        toggleActions: "restart none none reset"
+    }
+});
+
+// Animación escalonada para cada fila de la demo
+gsap.utils.toArray(".paginaEjemplo .row").forEach((row, i) => {
+    gsap.from(row, {
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        delay: 0.15 * i,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: row,
+            start: "top 90%",
+            toggleActions: "restart none none reset"
+        }
+    });
+});
+
+// Animación para los títulos dentro de la demo
+gsap.utils.toArray(".paginaEjemplo .titulos").forEach((titulo, i) => {
+    gsap.from(titulo, {
+        opacity: 0,
+        scale: 0.7,
+        duration: 0.5,
+        delay: 0.2 + 0.1 * i,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: titulo,
+            start: "top 95%",
+            toggleActions: "restart none none reset"
+        }
+    });
+});
+
+gsap.from(".contactoWhatsapp", {
+    opacity: 0,
+    scale: 0.5,
+    y: 60,
+    duration: 1,
+    ease: "elastic.out(1, 0.6)",
+    scrollTrigger: {
+        trigger: ".contactoWhatsapp",
+        start: "top 90%",
+        toggleActions: "restart none none reset"
+    }
+});
