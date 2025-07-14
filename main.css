@@ -470,6 +470,23 @@ main img:hover {
     transform: scale(1.1);
 }
 
+.card {
+    background-color: #222b3a;
+    color: #e0e0e0;
+    border: none;
+}
+.card-title {
+    color: #39c6d6;
+}
+.card-text {
+    color: #e0e0e0;
+}
+.list-group-item {
+    background-color: #222b3a;
+    color: #e0e0e0;
+    border: none;
+}
+
 @keyframes popInSection {
     0% {
         opacity: 0;
